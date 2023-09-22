@@ -1,8 +1,9 @@
+import ToastProvider from "@/components/Provider/ToastProvider";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Outfit } from "next/font/google";
 
-const poppins = Poppins({
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
@@ -20,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={outfit.className}>
+        {children}
+        <ToastProvider />
+      </body>
     </html>
   );
 }

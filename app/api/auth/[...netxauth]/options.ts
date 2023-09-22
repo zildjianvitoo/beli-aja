@@ -33,7 +33,7 @@ export const options: NextAuthOptions = {
           },
         });
 
-        if (!user || !user.password) {
+        if (!user || !user.email) {
           throw new Error("Email tidak ditemukan");
         }
 

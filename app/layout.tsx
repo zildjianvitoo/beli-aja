@@ -2,6 +2,7 @@ import ToastProvider from "@/components/Provider/ToastProvider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import SessionProvider from "@/components/Provider/SessionProvider";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={outfit.className}>
-        {children}
-        <ToastProvider />
+        <SessionProvider>
+          {children}
+          <ToastProvider />
+        </SessionProvider>
       </body>
     </html>
   );

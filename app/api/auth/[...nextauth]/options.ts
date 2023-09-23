@@ -33,7 +33,7 @@ export const options: NextAuthOptions = {
           },
         });
 
-        if (!user || !user.email) {
+        if (!user || !user.password) {
           throw new Error("Email tidak ditemukan");
         }
 
@@ -50,16 +50,16 @@ export const options: NextAuthOptions = {
   ],
   pages: {
     signIn: "/masuk",
-    error: "/masuk",
+    // error: "/masuk",
   },
   callbacks: {
-    session: async ({ session, token, user }) => {
-      if (session?.user) {
+    async session({ session, token, user }) {
+      if (session.user) {
         session.user.id = token.uid;
       }
       return session;
     },
-    jwt: async ({ user, token }) => {
+    async jwt({ user, token }) {
       if (user) {
         token.uid = user.id;
       }

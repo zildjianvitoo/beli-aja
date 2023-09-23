@@ -1,7 +1,12 @@
+import SignInForm from "@/components/Pages/SignIn/SignInForm";
 import React from "react";
 
 type Props = {};
 
 export default function Masuk({}: Props) {
-  return <main>page</main>;
+  return (
+    <main>
+      <SignInForm />
+    </main>
+  );
 }

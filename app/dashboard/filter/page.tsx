@@ -21,6 +21,7 @@ const Page = (props: Props) => {
 
   useEffect(() => {
     const filterProduct = async () => {
+      console.log(selectedSizes);
       try {
         const { data } = await axios.get("/api/filterproduct", {
           params: {

@@ -62,17 +62,16 @@ const Filter = (props: Props) => {
     );
   };
 
-  const getAllColors = async () => {
-    try {
-      const { data } = await axios.get("/api/color");
-      return data;
-    } catch (error) {
-      console.error("Error", error);
-      toast.error("Terjadi kesalahan saat mengambil data");
-    }
-  };
-
   useEffect(() => {
+    const getAllColors = async () => {
+      try {
+        const { data } = await axios.get("/api/color");
+        return data;
+      } catch (error) {
+        console.error("Error", error);
+        toast.error("Terjadi kesalahan saat mengambil data");
+      }
+    };
     const setHexColorValue = async () => {
       const allColors = await getAllColors();
       if (allColors) {
@@ -89,7 +88,9 @@ const Filter = (props: Props) => {
       }
     };
     setHexColorValue();
-  }, [props]);
+
+    // return () => setHexColorValue();
+  }, []);
 
   const allHexValue = props.hexValues;
 
@@ -106,7 +107,7 @@ const Filter = (props: Props) => {
         </div>
         <div className="flex flex-col py-3 pb-5 text-sm text-neutral-600 border-b-[0.5px]">
           <span
-            className={`py-3 px-5 ${
+            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Jaket") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Jaket")}
@@ -114,7 +115,7 @@ const Filter = (props: Props) => {
             Jaket
           </span>
           <span
-            className={`py-3 px-5 ${
+            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Mantel") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Mantel")}
@@ -122,7 +123,7 @@ const Filter = (props: Props) => {
             Mantel
           </span>
           <span
-            className={`py-3 px-5 ${
+            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Hoodie") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Hoodie")}
@@ -130,7 +131,7 @@ const Filter = (props: Props) => {
             Hoodie
           </span>
           <span
-            className={`py-3 px-5 ${
+            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Kaos") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Kaos")}
@@ -138,7 +139,7 @@ const Filter = (props: Props) => {
             Kaos
           </span>
           <span
-            className={`py-3 px-5 ${
+            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Jeans") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Jeans")}
@@ -146,7 +147,7 @@ const Filter = (props: Props) => {
             Jeans
           </span>
           <span
-            className={`py-3 px-5 ${
+            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Polo") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Polo")}
@@ -154,7 +155,7 @@ const Filter = (props: Props) => {
             Polo
           </span>
           <span
-            className={`py-3 px-5 ${
+            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Kemeja") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Kemeja")}
@@ -258,7 +259,17 @@ const Filter = (props: Props) => {
             </li>
             <li
               className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
-                props.selectedSize.includes("XXL")
+                props.selectedSize.includes("XL")
+                  ? "bg-neutral-900 text-white"
+                  : ""
+              }`}
+              onClick={() => togglesize("XL")}
+            >
+              XL
+            </li>
+            <li
+              className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
+                props.selectedSize.includes("2XL")
                   ? "bg-neutral-900 text-white"
                   : ""
               }`}
@@ -268,7 +279,7 @@ const Filter = (props: Props) => {
             </li>
             <li
               className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
-                props.selectedSize.includes("XXXL")
+                props.selectedSize.includes("3XL")
                   ? "bg-neutral-900 text-white"
                   : ""
               }`}
@@ -281,7 +292,7 @@ const Filter = (props: Props) => {
       </div>
       <div
         onClick={() => setShowFilter(!showFilter)}
-        className="absolute md:hidden top-[20px] right-[-42px] rotate-90 bg-gray-100 px-2 rounded-t-sm cursor-pointer"
+        className="absolute md:hidden top-[20px] right-[-42px] bg-gray-100 px-2 rounded-t-sm cursor-pointer"
       >
         <BsFilter className=" text-3xl" />
       </div>

@@ -9,11 +9,11 @@ export default function Container({}: Props) {
   return (
     <section className=" ">
       <div className=" flex">
-        {/* <Link href={"/dashboard/filter"} className=""> */}
-        <div>
-          <Filter />
-        </div>
-        {/* </Link> */}
+        <Link href={"/dashboard/filter"} className="opacity-60">
+          <div>
+            <Filter />
+          </div>
+        </Link>
         <div className="px-20">
           <Item />
         </div>

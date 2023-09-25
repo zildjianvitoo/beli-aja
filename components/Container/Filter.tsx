@@ -60,18 +60,17 @@ export default function Filter({}: Props) {
     );
   };
 
-  const getAllColors = async () => {
-    try {
-      const { data } = await axios.get("/api/color");
-      console.log(data);
-      return data;
-    } catch (error) {
-      console.log(error);
-      toast.error("Terjadi kesalahan saat mengambil data");
-    }
-  };
-
   useEffect(() => {
+    const getAllColors = async () => {
+      try {
+        const { data } = await axios.get("/api/color");
+        console.log(data);
+        return data;
+      } catch (error) {
+        console.log(error);
+        toast.error("Terjadi kesalahan saat mengambil data");
+      }
+    };
     const setHexColorValue = async () => {
       const allColors = await getAllColors();
       if (allColors) {
@@ -129,7 +128,7 @@ export default function Filter({}: Props) {
         </div>
         <div className="flex flex-col py-3 pb-5 text-sm text-neutral-600 border-b-[0.5px]">
           <span
-            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
+            className={`py-3 px-5 cursor-pointer  ${
               selectedCategories.includes("Jaket") ? "bg-purple-50 " : ""
             }`}
             onClick={() => toggleCategory("Jaket")}
@@ -137,7 +136,7 @@ export default function Filter({}: Props) {
             Jaket
           </span>
           <span
-            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
+            className={`py-3 px-5 cursor-pointer  ${
               selectedCategories.includes("Mantel") ? "bg-purple-50 " : ""
             }`}
             onClick={() => toggleCategory("Mantel")}
@@ -145,7 +144,7 @@ export default function Filter({}: Props) {
             Mantel
           </span>
           <span
-            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
+            className={`py-3 px-5 cursor-pointer  ${
               selectedCategories.includes("Hoodie") ? "bg-purple-50 " : ""
             }`}
             onClick={() => toggleCategory("Hoodie")}
@@ -153,7 +152,7 @@ export default function Filter({}: Props) {
             Hoodie
           </span>
           <span
-            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
+            className={`py-3 px-5 cursor-pointer  ${
               selectedCategories.includes("Kaos") ? "bg-purple-50 " : ""
             }`}
             onClick={() => toggleCategory("Kaos")}
@@ -161,7 +160,7 @@ export default function Filter({}: Props) {
             Kaos
           </span>
           <span
-            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
+            className={`py-3 px-5 cursor-pointer  ${
               selectedCategories.includes("Jeans") ? "bg-purple-50 " : ""
             }`}
             onClick={() => toggleCategory("Jeans")}
@@ -169,7 +168,7 @@ export default function Filter({}: Props) {
             Jeans
           </span>
           <span
-            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
+            className={`py-3 px-5 cursor-pointer  ${
               selectedCategories.includes("Polo") ? "bg-purple-50" : ""
             }`}
             onClick={() => toggleCategory("Polo")}
@@ -177,7 +176,7 @@ export default function Filter({}: Props) {
             Polo
           </span>
           <span
-            className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
+            className={`py-3 px-5 cursor-pointer  ${
               selectedCategories.includes("Kemeja") ? "bg-purple-50 " : ""
             }`}
             onClick={() => toggleCategory("Kemeja")}
@@ -295,23 +294,23 @@ export default function Filter({}: Props) {
               className={cn(
                 "border-[0.5px] rounded-lg text-center text-[14px] py-0.5 cursor-pointer",
                 {
-                  "bg-neutral-900 text-white": selectedSizes.includes("XXL"),
+                  "bg-neutral-900 text-white": selectedSizes.includes("2XL"),
                 }
               )}
               onClick={() => toggleSize("2XL")}
             >
-              XXL
+              2XL
             </li>
             <li
               className={cn(
                 "border-[0.5px] rounded-lg text-center text-[14px] py-0.5 cursor-pointer",
                 {
-                  "bg-neutral-900 text-white": selectedSizes.includes("XXXL"),
+                  "bg-neutral-900 text-white": selectedSizes.includes("3XL"),
                 }
               )}
               onClick={() => toggleSize("3XL")}
             >
-              XXXL
+              3XL
             </li>
           </ul>
         </div>

@@ -9,7 +9,7 @@ type Props = {
 export default function Size({ setFormData }: Props) {
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
 
-  const sizes = ["S", "M", "L", "XL", "XXL", "XXXL"];
+  const sizes = ["S", "M", "L", "XL", "2XL", "3XL"];
 
   const handleSizeButtonClick = (size: string) => {
     setSelectedSizes((prevSelectedSizes) => {

@@ -29,15 +29,11 @@ export default function TambahProdukForm({}: Props) {
     price: "1000",
     images: "",
     userId: id,
-    store: "VitoStore",
+    store: "BeliAja",
   });
   const [Description, setDescription] = useState<string>("");
   const [info, setInfo] = useState<any>();
   const [imgUrls, setImgUrls] = useState<string[]>([]);
-
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
 
   useEffect(() => {
     setFormData({

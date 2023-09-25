@@ -5,6 +5,10 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Size from "./Size";
 import Color from "./Color";
+import Para from "./Para";
+import { toast } from "react-toastify";
+import ImageUpload from "./ImageUpload";
+import { axiosInstance } from "@/utils/axiosIntance";
 
 type Props = {};
 
@@ -16,7 +20,7 @@ export default function TambahProdukForm({}: Props) {
 
   const [formData, setFormData] = useState({
     title: "",
-    description: "",
+    description: "<div><p>Masukkan deskripsimu disini</p></div>",
     category: "",
     style: "",
     size: "",
@@ -27,10 +31,36 @@ export default function TambahProdukForm({}: Props) {
     userId: id,
     store: "VitoStore",
   });
+  const [Description, setDescription] = useState<string>("");
+  const [info, setInfo] = useState<any>();
+  const [imgUrls, setImgUrls] = useState<string[]>([]);
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
+
+  useEffect(() => {
+    setFormData({
+      ...formData,
+      description: Description,
+      images: imgUrls.toString(),
+      userId: id,
+    });
+  }, [imgUrls]);
+
+  const handleImageChange = () => {
+    const stringImages = JSON.stringify(imgUrls);
+    setFormData({
+      ...formData,
+      images: stringImages,
+      description: Description,
+      userId: id,
+    });
+  };
 
   const onFormDataValueChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handlePriceChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -51,9 +81,23 @@ export default function TambahProdukForm({}: Props) {
     }));
   };
 
+  const onSubmitHandler = async (e: any) => {
+    e.preventDefault();
+    handleImageChange();
+    try {
+      const res = await axiosInstance.post("/api/addproduct", formData);
+      console.log(res);
+      toast.success("Berhasil menambahkan produk");
+      router.push("/dashboard");
+    } catch (error) {
+      toast.error("Terjadi error saat menambahkan produk");
+      console.log(error);
+    }
+  };
+
   return (
-    <section>
-      <div>
+    <section className="pt-6 pb-14">
+      <form onSubmit={onSubmitHandler}>
         <h1 className="text-3xl font-semibold py-6 ">Tambah Produk</h1>
         <div className="text-black mt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
@@ -170,7 +214,31 @@ export default function TambahProdukForm({}: Props) {
             </div>
           </div>
         </div>
-      </div>
+        <label htmlFor="" className="mt-10 inline-block font-medium">
+          Description tentang produkmu
+        </label>
+        <Para
+          setDescriptions={setDescription}
+          description={formData.description}
+        />
+
+        <label htmlFor="" className="mt-10 inline-block font-medium">
+          Unggah Foto Produk
+        </label>
+        <ImageUpload
+          info={info}
+          updateInfo={setInfo}
+          imgUrls={imgUrls}
+          setImgUrls={setImgUrls}
+          handleImageChange={handleImageChange}
+        />
+        <button
+          type="submit"
+          className="text-white mt-10 border bg-purple-500 rounded-lg px-5 p-2 lg:w-1/4"
+        >
+          Submit
+        </button>
+      </form>
     </section>
   );
 }

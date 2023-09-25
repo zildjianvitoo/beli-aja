@@ -21,8 +21,8 @@ export default function Color({ setFormData, formDataColor }: Props) {
         ...prevFormData,
         color: selectedColors.join(","),
       }));
-      handleSelectedColors();
     };
+    handleSelectedColors();
   }, [selectedColors]);
 
   const handleColorButtonClick = () => {
@@ -42,6 +42,7 @@ export default function Color({ setFormData, formDataColor }: Props) {
     <div>
       <div className="flex items-center justify-between mt-3">
         <button
+          type="button"
           className="block border rounded-lg px-3 text-[14px]"
           onClick={() => setOpen((prev) => !prev)}
         >
@@ -54,6 +55,7 @@ export default function Color({ setFormData, formDataColor }: Props) {
           />
         )}
         <button
+          type="button"
           className="flex items-center gap-x-1 border rounded-lg p-1 px-3 text-[14px] "
           onClick={handleColorButtonClick}
         >
@@ -71,6 +73,7 @@ export default function Color({ setFormData, formDataColor }: Props) {
               {color}
             </span>
             <button
+              type="button"
               className="border rounded-lg p-1 px-3 text-[14px]"
               onClick={() => handleDeleteColor(index)}
             >

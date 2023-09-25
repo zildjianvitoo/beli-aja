@@ -31,6 +31,7 @@ export default function Size({ setFormData }: Props) {
     <div>
       {sizes.map((size) => (
         <button
+          type="button"
           key={size}
           className={cn(
             "border-[0.5px] rounded-lg text-center text-[14px] py-2 cursor-pointer px-3 mt-4 mb-5 mr-5",

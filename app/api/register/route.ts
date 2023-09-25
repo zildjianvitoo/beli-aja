@@ -17,11 +17,9 @@ export async function POST(req: Request) {
         password: hashedPassword,
       },
     });
-    console.log(user);
 
     return NextResponse.json(user);
   } catch (error) {
-    console.log(error);
     return NextResponse.error();
   }
 }

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BsSliders2Vertical, BsChevronUp, BsFilter } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
+import cn from "@/utils/cn";
 
 type Props = {
   selectedCategories: any;
@@ -97,15 +98,30 @@ const Filter = (props: Props) => {
   return (
     <div className="relative">
       <div
-        className={`md:w-[250px] border-l-[0.5px] border-r-[0.5px] ${
-          showFilter ? "max-md:w-[250px]" : "w-0 max-md:invisible"
+        className={cn(
+          " z-[5] fixed top-0 left-0 sm:hidden bg-[#00000084] min-h-screen w-full",
+          {
+            "hidden ": !showFilter,
+          }
+        )}
+        onClick={() => setShowFilter(false)}
+      />
+      <div
+        className={`md:w-[250px] border-l-[0.5px] border-r-[0.5px] transition-all ${
+          showFilter
+            ? "max-md:w-[250px] absolute md:static z-10 bg-white "
+            : "w-0 max-md:invisible absolute md:static z-10"
         }`}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b-[0.5px]">
           <h1 className="text-neutral-800">Filter</h1>
-          <BsSliders2Vertical size={20} className="text-neutral-600" />
+          <BsSliders2Vertical
+            size={20}
+            className="text-neutral-600"
+            onClick={() => setShowFilter(false)}
+          />
         </div>
-        <div className="flex flex-col py-3 pb-5 text-sm text-neutral-600 border-b-[0.5px]">
+        <div className="flex flex-col py-3 pb-5 text-sm text-neutral-600 border-b-[0.5px] ">
           <span
             className={`py-3 px-5 cursor-pointer hover:bg-purple-50 ${
               props.selectedCategories.includes("Jaket") ? "bg-purple-50" : ""
@@ -292,7 +308,7 @@ const Filter = (props: Props) => {
       </div>
       <div
         onClick={() => setShowFilter(!showFilter)}
-        className="absolute md:hidden top-[20px] right-[-42px] bg-gray-100 px-2 rounded-t-sm cursor-pointer"
+        className="absolute md:hidden top-[17px] right-[-52px] bg-gray-100 px-2 rounded-t-sm cursor-pointer"
       >
         <BsFilter className=" text-3xl" />
       </div>

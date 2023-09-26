@@ -26,8 +26,8 @@ export default function NavbarDashboard({}: Props) {
   //   );
   // };
   return (
-    <nav>
-      <div className=" flex items-center justify-between py-4 relative">
+    <nav className="px-5 bg-white relative top-0 left-0  z-[100]">
+      <div className=" flex items-center justify-between py-4 ">
         <div className="flex items-center gap-x-10 lg:gap-x-20">
           <div className=" font-semibold text-2xl ">
             <Link href={"/dashboard"}>BeliAja</Link>

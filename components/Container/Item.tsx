@@ -15,8 +15,8 @@ export default async function Item({}: Props) {
 
   return (
     <div>
-      <h1 className="py-3 text-xl">Pakaian</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-2 gap-12 md:gap-20">
+      <h1 className="py-3 text-2xl font-medium">Pakaian</h1>
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 lg:gap-14 gap-12 mt-5">
         {products.map((product, index) => (
           <div key={product.id}>
             <Link href={`/dashboard/${product.id}`}>
@@ -26,7 +26,7 @@ export default async function Item({}: Props) {
                   alt={product.title}
                   width={250}
                   height={250}
-                  className="w-[250px] h-[300px] object-cover object-top rounded-lg hover:scale-[1.02] transition-all duration-200"
+                  className="w-[250px] h-[300px] object-cover object-top rounded-lg hover:scale-[1.02] transition-all "
                 />
               </div>
               <div className=" flex items-center justify-between mt-4">

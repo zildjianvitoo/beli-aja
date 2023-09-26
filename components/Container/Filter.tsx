@@ -118,7 +118,8 @@ export default function Filter({}: Props) {
     <section className="relative">
       <div
         className={cn("md:w-[250px] border-l-[0.5px] border-r-[0.5px] ", {
-          "max-md:w-[250px]": showFilter,
+          "max-md:w-[250px] transition-all duration-200 absolute z-10":
+            showFilter,
           "w-0 max-md:invisible": !showFilter,
         })}
       >

@@ -14,7 +14,7 @@ export default function Container({}: Props) {
             <Filter />
           </div>
         </Link>
-        <div className="px-20">
+        <div className="pl-16 md:pl-10 lg:px-6 xl:px-12">
           <Item />
         </div>
       </div>

@@ -50,7 +50,7 @@ const Page = (props: Props) => {
     <div>
       <hr />
       <div className="flex">
-        <div>
+        <div className="">
           <Filter
             selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
@@ -64,9 +64,9 @@ const Page = (props: Props) => {
             setPrice={setPrice}
           />
         </div>
-        <div className="px-10">
+        <div className="pl-16 md:pl-10 lg:px-6 xl:px-12">
           <h1 className="py-3 text-2xl font-medium">Pakaian yang difilter</h1>
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-5">
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 lg:gap-14 gap-12 mt-5">
             {response.map((product: any) => (
               <div key={product.id}>
                 <Link href={`/dashboard/${product.id}`}>

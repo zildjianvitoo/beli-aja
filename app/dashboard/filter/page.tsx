@@ -47,7 +47,7 @@ const Page = (props: Props) => {
   }, [selectedCategories, selectedSizes, selectedHexValues, price]);
 
   return (
-    <div>
+    <main>
       <hr />
       <div className="flex">
         <div className="">
@@ -75,7 +75,7 @@ const Page = (props: Props) => {
                       src={product.images.split(",")[0]}
                       width={250}
                       height={300}
-                      className="w-[250px] h-[300px] object-cover object-top rounded-lg"
+                      className="w-[250px] h-[300px] object-cover object-top rounded-lg hover:scale-[1.02] transition-all"
                       alt="Foto produk"
                     />
                   </div>
@@ -96,7 +96,7 @@ const Page = (props: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

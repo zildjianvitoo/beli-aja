@@ -117,11 +117,13 @@ export default function Filter({}: Props) {
   return (
     <section className="relative">
       <div
-        className={cn("md:w-[250px] border-l-[0.5px] border-r-[0.5px] ", {
-          "max-md:w-[250px] transition-all duration-200 absolute z-10":
-            showFilter,
-          "w-0 max-md:invisible": !showFilter,
-        })}
+        className={cn(
+          "md:w-[250px] border-l-[0.5px] border-r-[0.5px] transition-all ",
+          {
+            "max-md:w-[250px] absolute md:static z-10 bg-white": showFilter,
+            "w-0 max-md:invisible absolute md:static z-10": !showFilter,
+          }
+        )}
       >
         <div className=" flex items-center justify-between px-5 py-4 border-b-[0.5px]">
           <h1 className="text-neutral-800">Filter</h1>
@@ -318,7 +320,7 @@ export default function Filter({}: Props) {
       </div>
       <button
         onClick={() => setShowFilter((prev) => !prev)}
-        className="absolute z-10 md:hidden top-5 right-[-42px] bg-gray-100 px-2 rounded-t-sm cursor-pointer"
+        className="absolute z-10 md:hidden top-[17px] right-[-52px] bg-gray-100 px-2 rounded-t-sm cursor-pointer"
       >
         <BsFilter className=" text-3xl" />
       </button>

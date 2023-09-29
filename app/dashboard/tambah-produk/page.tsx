@@ -1,4 +1,4 @@
-import TambahProdukForm from "@/components/Pages/TambahProdul/TambahProdukForm";
+import TambahProdukForm from "@/components/Pages/TambahProduk/TambahProdukForm";
 import React from "react";
 
 type Props = {};

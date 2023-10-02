@@ -3,6 +3,7 @@ import prisma from "@/app/prismadb";
 import ImageGallery from "@/components/Pages/ProductDetail/ImageGallery";
 import Info from "@/components/Pages/ProductDetail/Info";
 import Review from "@/components/Pages/ProductDetail/Review";
+import ReviewSection from "@/components/Pages/ProductDetail/ReviewSection";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 
@@ -13,17 +14,29 @@ type Props = {
 };
 
 export default async function ProductId({ params }: Props) {
-  const productId = params.productId;
+  const productId = parseInt(params.productId);
   const session = await getServerSession(options);
   const currentUserId = session?.user.id;
 
   const product = await prisma.product.findUnique({
     where: {
-      id: +productId,
+      id: productId,
     },
   });
   const imgUrlString = product?.images;
+  const allReview = await prisma.review.findMany({
+    where: {
+      productId: productId,
+    },
+  });
 
+  let averageRating = 0;
+  if (allReview.length > 0) {
+    const totalRating = allReview.reduce((acc, review) => {
+      return acc + review.rating;
+    }, 0);
+    averageRating = totalRating / allReview.length;
+  }
   return (
     <main className=" px-5 lg:px-0">
       {" "}
@@ -34,8 +47,8 @@ export default async function ProductId({ params }: Props) {
         <div className="grid  sm:grid-cols-2 mt-10 gap-12">
           {imgUrlString && <ImageGallery imageUrls={imgUrlString} />}
           <Info
-            // rating={avgRating}
-            // numberComments={allReview.length}
+            rating={averageRating}
+            numberComments={allReview.length}
             {...product}
           />
         </div>
@@ -89,7 +102,14 @@ export default async function ProductId({ params }: Props) {
           <span className="font-medium text-xl">Komen & Penilaian Produk</span>
         </div>
         <div className=" grid grid-cols-2">
-          <div></div>
+          <div>
+            {allReview.map((review, index) => (
+              <div key={review.id} className="mb-5">
+                <h1 className="mb-2 font-medium">Ulasan: {index + 1}</h1>
+                <ReviewSection {...review} />
+              </div>
+            ))}
+          </div>
           <Review productId={product?.id} userId={currentUserId} />
         </div>
       </div>

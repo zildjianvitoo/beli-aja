@@ -4,13 +4,13 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const { productId, userId } = body;
+  const { productId, userId } = await body;
 
   try {
     const existingCartItem = await prisma.cart.findFirst({
       where: {
-        productId,
-        userId,
+        productId: productId,
+        userId: userId,
       },
     });
 

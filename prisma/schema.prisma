@@ -18,7 +18,7 @@ model User {
   password String @db.VarChar(255)
   Product Product[]
   Cart Cart[]
-    Review Review[]
+  Review Review[]
 }
 
 model Product {
@@ -60,5 +60,4 @@ model Review {
   User User @relation(fields: [userId],references: [id],onDelete: Cascade)
   @@index([productId]) 
   @@index([userId]) 
-
 }

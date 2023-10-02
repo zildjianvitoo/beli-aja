@@ -39,6 +39,7 @@ export default function Review({ productId, userId }: Props) {
     try {
       const { data } = await axios.post("/api/review", reviewForm);
       setReviewForm(reviewFormDefaultValue);
+      console.log(data);
       router.refresh();
     } catch (error) {
       console.log(error);

@@ -44,7 +44,9 @@ export default function Size({ setFormData }: Props) {
           {size}
         </button>
       ))}
-      <button onClick={handleSubmit}>Tambah Ukuran</button>
+      <button type="button" onClick={handleSubmit}>
+        Tambah Ukuran
+      </button>
     </div>
   );
 }

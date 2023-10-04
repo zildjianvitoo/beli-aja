@@ -28,8 +28,11 @@ export default function DeleteCart({ productId, userId }: Props) {
   };
 
   return (
-    <div className="cursor-pointer" onClick={handleDelete}>
-      <GoTrash className="text-red-500" size={20} />
+    <div className="cursor-pointer mt-3 " onClick={handleDelete}>
+      <GoTrash
+        className="text-red-500 transition-all hover:scale-105"
+        size={20}
+      />
     </div>
   );
 }

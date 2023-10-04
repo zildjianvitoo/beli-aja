@@ -44,3 +44,22 @@ export async function POST(req: Request) {
     NextResponse.error();
   }
 }
+
+export async function DELETE(req: Request) {
+  const body = await req.json();
+
+  const { productId, userId } = await body;
+
+  try {
+    const deleteCart = await prisma.cart.deleteMany({
+      where: {
+        productId: productId,
+        userId: userId,
+      },
+    });
+    return NextResponse.json(deleteCart);
+  } catch (error) {
+    console.log(error);
+    return NextResponse.error();
+  }
+}

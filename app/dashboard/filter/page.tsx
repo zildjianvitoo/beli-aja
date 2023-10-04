@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import Filter from "@/components/Pages/Filter/Filter";
 import Image from "next/image";
+import { axiosInstance } from "@/utils/axiosIntance";
 
 type Props = {};
 
@@ -23,7 +24,7 @@ const Page = (props: Props) => {
     const filterProduct = async () => {
       console.log(selectedSizes);
       try {
-        const { data } = await axios.get("/api/filterproduct", {
+        const { data } = await axiosInstance.get("/api/filter-product", {
           params: {
             categories: selectedCategories,
             size: selectedSizes,

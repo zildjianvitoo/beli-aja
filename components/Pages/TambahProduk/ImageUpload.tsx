@@ -39,6 +39,7 @@ export default function ImageUpload({
     });
   };
 
+  console.log(imgUrls);
   return (
     <div>
       <div className="mb-10">
@@ -62,13 +63,13 @@ export default function ImageUpload({
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3">
         {imgUrls?.map((image, index) => (
-          <div key={index} className="flex flex-col justify-center">
+          <div key={index} className="flex  flex-col justify-center">
             <Image
               src={image}
               alt="Foto produk"
               width={250}
               height={300}
-              className="object-cover object-top w-[250px] h-[300px]"
+              className="object-cover mx-auto object-top w-[250px] h-[300px]"
             />
             <button
               type="button"

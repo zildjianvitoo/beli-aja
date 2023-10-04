@@ -1,48 +1,74 @@
 "use client";
-import { useState, useEffect, ChangeEvent } from "react";
-import axios from "axios";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Size from "./Size";
-import Color from "./Color";
-import Para from "./Para";
+import Size from "../TambahProduk/Size";
+import Color from "../TambahProduk/Color";
+import Para from "../TambahProduk/Para";
 import { toast } from "react-toastify";
-import ImageUpload from "./ImageUpload";
+import ImageUpload from "../TambahProduk/ImageUpload";
 import { axiosInstance } from "@/utils/axiosIntance";
 
-type Props = {};
+type Props = {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  style: string;
+  store: string;
+  size: string;
+  inventory: number;
+  color: string;
+  price: number;
+  images: string;
+  userId: number;
+};
 
-export default function TambahProdukForm({}: Props) {
-  const { data: session } = useSession();
-  const id = session?.user.id;
-
-  const router = useRouter();
-
+export default function Edit({
+  id,
+  title,
+  category,
+  color,
+  description,
+  images,
+  inventory,
+  price,
+  store,
+  style,
+  size,
+  userId,
+}: Props) {
   const [formData, setFormData] = useState({
-    title: "",
-    description: "<div><p>Masukkan deskripsimu disini</p></div>",
-    category: "",
-    style: "",
-    size: "",
-    inventory: "",
-    color: "#fe345e",
-    price: 1000,
-    images: "",
+    id: userId,
+    title: title,
+    category: category,
+    color: color,
+    description: description,
+    images: images,
+    inventory: inventory,
+    size: size,
+    price: price,
+    store: store,
+    style: style,
     userId: id,
-    store: "BeliAja",
   });
+
   const [Description, setDescription] = useState<string>("");
   const [info, setInfo] = useState<any>();
   const [imgUrls, setImgUrls] = useState<string[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
-    setFormData({
-      ...formData,
-      description: Description,
-      images: imgUrls.toString(),
-      userId: id,
-    });
-  }, [imgUrls]);
+    if (formData.images) {
+      const imageUrlArray = formData.images
+        .replace("[", "")
+        .replace("]", "")
+        .replace(/["]/g, "")
+        .split(",");
+      console.log(imageUrlArray);
+      setImgUrls(imageUrlArray);
+    }
+  }, []);
 
   const handleImageChange = () => {
     const stringImages = JSON.stringify(imgUrls);
@@ -77,16 +103,17 @@ export default function TambahProdukForm({}: Props) {
     }));
   };
 
-  const onSubmitHandler = async (e: any) => {
+  const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleImageChange();
     try {
-      const res = await axiosInstance.post("/api/add-product", formData);
-      console.log(res);
-      toast.success("Berhasil menambahkan produk");
-      router.push("/dashboard");
+      const { data } = await axiosInstance.patch(
+        "/api/update-product",
+        formData
+      );
+      router.refresh();
+      toast.success("Berhasil memperbarui produk");
     } catch (error) {
-      toast.error("Terjadi error saat menambahkan produk");
       console.log(error);
     }
   };
@@ -230,7 +257,7 @@ export default function TambahProdukForm({}: Props) {
         />
         <button
           type="submit"
-          className="text-white mt-10 border bg-purple-500 rounded-lg px-5 p-2 lg:w-1/4"
+          className="text-white mt-10 border bg-purple-500 rounded-lg px-5 p-2 lg:w-[24.5%]"
         >
           Submit
         </button>

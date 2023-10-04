@@ -38,6 +38,7 @@ export async function POST(req: Request) {
     return NextResponse.json(product);
   } catch (error) {
     console.log(error);
+    console.log(error);
     return NextResponse.error();
   }
 }

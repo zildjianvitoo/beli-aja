@@ -9,7 +9,11 @@ type Props = {
 
 export default function ImageGallery({ imageUrls }: Props) {
   const [selectedImage, setSelectedImage] = useState<number>(0);
-  const urlArray = imageUrls.split(",");
+  const urlArray = imageUrls
+    .replace("]", "")
+    .replace("[", "")
+    .replace(/["]/g, "")
+    .split(",");
 
   return (
     <div className="images grid grid-cols-1 place-items-center md:grid-cols-7 ">

@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { CiShoppingCart, CiCreditCard1 } from "react-icons/ci";
 import { toast } from "react-toastify";
+import { axiosInstance } from "@/utils/axiosIntance";
 
 type Props = {
   productId: number;
@@ -22,7 +23,7 @@ export default function AddCart({ productId }: Props) {
       return;
     }
     try {
-      const { data } = await axios.post("/api/cart", {
+      const { data } = await axiosInstance.post("/api/cart", {
         productId: productId,
         userId: userId,
       });

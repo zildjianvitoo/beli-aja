@@ -4,6 +4,7 @@ import { BsSliders2Vertical, BsChevronUp, BsFilter } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
 import cn from "@/utils/cn";
+import { axiosInstance } from "@/utils/axiosIntance";
 
 type Props = {};
 
@@ -63,7 +64,7 @@ export default function Filter({}: Props) {
   useEffect(() => {
     const getAllColors = async () => {
       try {
-        const { data } = await axios.get("/api/color");
+        const { data } = await axiosInstance.get("/api/color");
         console.log(data);
         return data;
       } catch (error) {
@@ -92,7 +93,7 @@ export default function Filter({}: Props) {
   useEffect(() => {
     const filterProduct = async () => {
       try {
-        const { data } = await axios.get("/api/filterproduct", {
+        const { data } = await axiosInstance.get("/api/filter-product", {
           params: {
             categories: selectedCategories,
             size: selectedSizes,

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { BsSliders2Vertical, BsChevronUp, BsFilter } from "react-icons/bs";
-import axios from "axios";
 import { toast } from "react-toastify";
 import cn from "@/utils/cn";
+import { axiosInstance } from "@/utils/axiosIntance";
 
 type Props = {
   selectedCategories: any;
@@ -66,7 +66,7 @@ const Filter = (props: Props) => {
   useEffect(() => {
     const getAllColors = async () => {
       try {
-        const { data } = await axios.get("/api/color");
+        const { data } = await axiosInstance.get("/api/color");
         return data;
       } catch (error) {
         console.error("Error", error);

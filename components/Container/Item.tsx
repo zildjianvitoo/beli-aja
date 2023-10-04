@@ -2,6 +2,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 import prisma from "@/app/prismadb";
 import Image from "next/image";
+import { useEffect } from "react";
 
 type Props = {};
 
@@ -22,7 +23,13 @@ export default async function Item({}: Props) {
             <Link href={`/dashboard/${product.id}`}>
               <div className="relative rounded-lg">
                 <Image
-                  src={product.images.split(",")[0]}
+                  src={
+                    product.images
+                      .replace("[", "")
+                      .replace("]", "")
+                      .replace(/["]/g, "")
+                      .split(",")[0]
+                  }
                   alt={product.title}
                   width={250}
                   height={250}

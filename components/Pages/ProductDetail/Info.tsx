@@ -136,7 +136,7 @@ export default function Info({
         </span>
       </div>
       {currentUserId === userId && (
-        <Link href={`/edit/${id}`}>
+        <Link href={`/dashboard/edit-produk/${id}`}>
           <span className=" absolute top-0 right-0 opacity-75 hover:opacity-100 p-2 bg-green-600 rounded-full text-white cursor-pointer">
             <AiTwotoneEdit size={24} />
           </span>

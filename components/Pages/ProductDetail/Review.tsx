@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import ReactStars from "react-rating-star-with-type";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { axiosInstance } from "@/utils/axiosIntance";
 
 type Props = {
   productId?: number;
@@ -37,7 +38,7 @@ export default function Review({ productId, userId }: Props) {
   const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/review", reviewForm);
+      const { data } = await axiosInstance.post("/api/review", reviewForm);
       setReviewForm(reviewFormDefaultValue);
       console.log(data);
       router.refresh();

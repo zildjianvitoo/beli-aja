@@ -44,9 +44,9 @@ export default async function AllCartProduct({ userId }: Props) {
       {cartProducts.map((cartProduct) => (
         <div
           key={cartProduct?.id}
-          className="flex items-center justify-between shadow-lg w-8/12 mx-auto p-5 rounded-lg mt-6"
+          className="flex items-center gap-y-6 justify-start flex-col sm:flex-row md:justify-between  shadow-lg w-8/12 mx-auto p-5 rounded-lg mt-6"
         >
-          <div>
+          <div className=" mr-auto">
             <h1 className="text-2xl mb-3">{cartProduct?.title}</h1>
             <h2 className="mb-2 text-neutral-800">
               Harga: {cartProduct?.price}
@@ -69,7 +69,7 @@ export default async function AllCartProduct({ userId }: Props) {
                 width={200}
                 height={200}
                 alt="Foto produk"
-                className="object-cover object-top"
+                className="object-cover w-[200px] h-[200px] object-top rounded-lg"
               />
             </div>
           </Link>

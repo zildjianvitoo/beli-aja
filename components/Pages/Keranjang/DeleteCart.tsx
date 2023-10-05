@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 type Props = {
-  productId: number;
+  productId?: number;
   userId?: number;
 };
 

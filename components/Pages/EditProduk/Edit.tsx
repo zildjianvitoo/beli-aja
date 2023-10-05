@@ -65,7 +65,6 @@ export default function Edit({
         .replace("]", "")
         .replace(/["]/g, "")
         .split(",");
-      console.log(imageUrlArray);
       setImgUrls(imageUrlArray);
     }
   }, []);

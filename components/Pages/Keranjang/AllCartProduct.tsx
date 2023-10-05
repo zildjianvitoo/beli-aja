@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import DeleteCart from "./DeleteCart";
 import Button from "@/components/Button";
+import { BsCartX } from "react-icons/bs";
 
 type Props = {
   userId: number;
@@ -31,8 +32,8 @@ export default async function AllCartProduct({ userId }: Props) {
 
   if (cartProducts.length === 0) {
     return (
-      <div className=" relative flex items-center justify-center">
-        <Image src={"/assets/empty.png"} />
+      <div className=" relative flex items-center justify-center py-10 ">
+        <BsCartX className={"text-4xl  m-auto text-purple-600"} />
         <h1 className="absolute top-[80%] text-2xl text-purple-600">
           Keranjang Kosong
         </h1>
@@ -65,7 +66,13 @@ export default async function AllCartProduct({ userId }: Props) {
           <Link href={`/dashboard/${cartProduct?.id}`}>
             <div>
               <Image
-                src={cartProduct?.images.split(",")[0]!}
+                src={
+                  cartProduct?.images
+                    .replace("[", "")
+                    .replace("]", "")
+                    .replace(/["]/g, "")
+                    .split(",")[0]!
+                }
                 width={200}
                 height={200}
                 alt="Foto produk"

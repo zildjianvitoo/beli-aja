@@ -25,15 +25,14 @@ export default async function AllCartProduct({ userId }: Props) {
       },
     })
   );
-
   const cartProducts = await Promise.all(cartProductPromises);
 
   const allIds = allCartProduct.map((item) => item.productId);
 
   if (cartProducts.length === 0) {
     return (
-      <div className=" relative flex items-center justify-center py-10 ">
-        <BsCartX className={"text-4xl  m-auto text-purple-600"} />
+      <div className=" relative flex items-center justify-center py-10 min-h-[60vh]">
+        <BsCartX className={"text-4xl md:text-[100px]  my-5 text-purple-600"} />
         <h1 className="absolute top-[80%] text-2xl text-purple-600">
           Keranjang Kosong
         </h1>
@@ -58,9 +57,7 @@ export default async function AllCartProduct({ userId }: Props) {
             <h3 className="text-sm mb-2 text-neutral-600">
               Jenis: {cartProduct?.style}
             </h3>
-            <h3 className="text-sm mb-2 text-neutral-600">
-              Ukuran: {cartProduct?.size}
-            </h3>
+
             <DeleteCart productId={cartProduct?.id} userId={userId} />
           </div>
           <Link href={`/dashboard/${cartProduct?.id}`}>

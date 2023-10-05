@@ -42,3 +42,23 @@ export async function POST(req: Request) {
     return NextResponse.error();
   }
 }
+
+export async function DELETE(req: Request) {
+  const body = await req.json();
+
+  const { productId, userId } = await body;
+
+  try {
+    const deletedProduct = await prisma.product.delete({
+      where: {
+        id: productId,
+        userId: userId,
+      },
+    });
+
+    return NextResponse.json(deletedProduct);
+  } catch (error) {
+    console.log(error);
+    return NextResponse.error();
+  }
+}

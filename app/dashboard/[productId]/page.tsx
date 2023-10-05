@@ -59,7 +59,7 @@ export default async function ProductId({ params }: Props) {
           <span className="font-medium text-xl">Deskripsi Produk</span>
         </div>
         {product && (
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10">
             <div className="flex flex-col justify-center">
               <div className="grid grid-cols-3 gap-5 mb-5">
                 <div>
@@ -83,13 +83,19 @@ export default async function ProductId({ params }: Props) {
                 {/* {product.description} */}
               </div>
             </div>
-            <div className="flex justify-end relative items-center">
+
+            <div className="flex justify-center sm:justify-end relative items-center">
               <img
-                src={product.images.split(",").pop()}
+                src={product.images
+                  .replace("[", "")
+                  .replace("]", "")
+                  .replace(/["]/g, "")
+                  .split(",")
+                  .pop()}
                 className="max-h-[300px] w-10/12 rounded-lg object-cover"
                 alt="Foto"
               />
-              <span className="text-sm absolute bottom-2 right-2 text-white font-medium">
+              <span className="text-sm absolute bottom-2 right-12 sm:right-2 text-white font-medium">
                 {product.title}
               </span>
             </div>

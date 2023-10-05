@@ -73,7 +73,13 @@ const Page = (props: Props) => {
                 <Link href={`/dashboard/${product.id}`}>
                   <div className="relative rounded-lg">
                     <Image
-                      src={product.images.split(",")[0]}
+                      src={
+                        product.images
+                          .replace("[", "")
+                          .replace("]", "")
+                          .replace(/["]/g, "")
+                          .split(",")[0]
+                      }
                       width={250}
                       height={300}
                       className="w-[250px] h-[300px] object-cover object-top rounded-lg hover:scale-[1.02] transition-all"

@@ -40,7 +40,6 @@ export async function POST(req: Request) {
     //   return NextResponse.json(product);
     // }
   } catch (error) {
-    console.log(error);
     NextResponse.error();
   }
 }
@@ -59,7 +58,6 @@ export async function DELETE(req: Request) {
     });
     return NextResponse.json(deleteCart);
   } catch (error) {
-    console.log(error);
     return NextResponse.error();
   }
 }

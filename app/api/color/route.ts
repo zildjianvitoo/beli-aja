@@ -10,7 +10,6 @@ export async function GET(req: Request) {
     });
     return NextResponse.json(allColors);
   } catch (error) {
-    console.log(error);
     return NextResponse.error();
   }
 }

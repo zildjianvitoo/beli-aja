@@ -42,7 +42,6 @@ export async function GET(request: Request) {
     });
     return NextResponse.json(products);
   } catch (error) {
-    console.log("Error saat memilih produk", error);
     return NextResponse.error();
   }
 }

@@ -41,7 +41,6 @@ export async function PATCH(req: Request) {
 
     return NextResponse.json(updateProduct);
   } catch (error) {
-    console.log(error);
     return NextResponse.error();
   }
 }

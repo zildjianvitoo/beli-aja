@@ -7,7 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary-beliAja": "#FE6A3A",
+        "secondary-beliAja": "#FBC800",
+        "text-color-beliAja": "#040404",
+      },
+    },
   },
   plugins: [],
 };

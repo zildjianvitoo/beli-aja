@@ -30,12 +30,15 @@ export default function NavbarDashboard({}: Props) {
       <div className=" flex items-center justify-between py-4 ">
         <div className="flex items-center gap-x-10 lg:gap-x-20">
           <div className=" font-semibold text-2xl ">
-            <Link href={"/dashboard"}>BeliAja</Link>
+            <Link href={"/dashboard/filter"}>BeliAja</Link>
           </div>
           <div className="max-md:hidden">
             <ul className="flex items-center lg:gap-x-10 gap-x-7 opacity-70 text-[15px]">
               <li>
-                <Link href={"/dashboard"} className="py-3 inline-block w-full">
+                <Link
+                  href={"/dashboard/filter"}
+                  className="py-3 inline-block w-full"
+                >
                   Belanja
                 </Link>
               </li>
@@ -47,7 +50,7 @@ export default function NavbarDashboard({}: Props) {
                   Filter
                 </Link>
               </li>
-              {session?.user && (
+              {/* {session?.user && (
                 <li>
                   <Link
                     href={"/dashboard/produk-saya"}
@@ -56,7 +59,7 @@ export default function NavbarDashboard({}: Props) {
                     Produk Saya
                   </Link>
                 </li>
-              )}
+              )} */}
             </ul>
           </div>
         </div>
@@ -138,7 +141,7 @@ export default function NavbarDashboard({}: Props) {
               Filter
             </Link>
           </li>
-          {session?.user && (
+          {/* {session?.user && (
             <li>
               <Link
                 href={"/dashboard/produk-saya"}
@@ -147,7 +150,7 @@ export default function NavbarDashboard({}: Props) {
                 Produk Saya
               </Link>
             </li>
-          )}
+          )} */}
         </ul>
         <div className="flex  items-center bg-gray-100 p-2 rounded-lg my-4 py-3 ">
           <input

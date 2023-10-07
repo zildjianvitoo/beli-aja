@@ -11,6 +11,7 @@ type Props = {
 };
 
 export default async function AllCartProduct({ userId }: Props) {
+  console.log(userId);
   const allCartProduct = await prisma.cart.findMany({
     where: {
       userId: userId,

@@ -39,7 +39,7 @@ export default function Edit({
   userId,
 }: Props) {
   const [formData, setFormData] = useState({
-    id: userId,
+    id: id,
     title: title,
     category: category,
     color: color,
@@ -50,7 +50,7 @@ export default function Edit({
     price: price,
     store: store,
     style: style,
-    userId: id,
+    userId: userId,
   });
 
   const [Description, setDescription] = useState<string>("");

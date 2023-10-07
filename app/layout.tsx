@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import SessionProvider from "@/components/Provider/SessionProvider";
-import { LayoutProvider } from "@/components/Provider/LayoutProvider";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -25,10 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={outfit.className}>
         <SessionProvider>
-          <LayoutProvider>
-            {children}
-            <ToastProvider />
-          </LayoutProvider>
+          {children}
+          <ToastProvider />
         </SessionProvider>
       </body>
     </html>

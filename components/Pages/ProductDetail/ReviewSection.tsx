@@ -20,7 +20,7 @@ export default function ReviewSection({
       <ReactStars
         value={rating}
         isEdit={true}
-        activeColors={["red", "orange", "#FFCE00", "#9177FF", "#8568FC"]}
+        activeColors={["red", "#f55185", "#FFCE00", "#f28438", "#f97316"]}
       />
       <p className="mt-2">{comment}</p>
     </div>

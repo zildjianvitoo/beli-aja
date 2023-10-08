@@ -56,20 +56,20 @@ export default function Review({ productId, userId }: Props) {
           onChange={onReviewStarChangeHandler}
           value={reviewFormDefaultValue.star}
           size={17}
-          activeColors={["red", "orange", "#FFCE00", "#9177FF", "#8568FC"]}
+          activeColors={["red", "#f55185", "#FFCE00", "#f28438", "#f97316"]}
           isEdit
         />
         <h2 className="mt-4">Tulis ulasanmu disini</h2>
         <div className="">
           <input
             type="text"
-            className="border border-purple-300 rounded-lg w-full h-10 focus:border-purple-500 outline-none  px-2 mt-2"
+            className="border border-orange-300 rounded-lg w-full h-10 focus:border-orange-500 outline-none  px-2 mt-2"
             name="comment"
             value={reviewForm.comment}
             onChange={onReviewFormChangeHandler}
           />
         </div>
-        <button className=" px-5 p-2 border bg-purple-600 text-white rounded-lg mt-5">
+        <button className=" px-5 p-2 border bg-primary-beliAja text-white rounded-lg mt-5">
           Buat ulasan
         </button>
       </form>

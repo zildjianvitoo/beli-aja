@@ -27,9 +27,9 @@ export default function ImageGallery({ imageUrls }: Props) {
               alt={`Gambar ${index}`}
               onClick={() => setSelectedImage(index)}
               className={cn(
-                "w-[70px] h-[70px] rounded-lg mb-3 p-1 object-cover border border-purple-200 object-top cursor-pointer",
+                "w-[70px] h-[70px] rounded-lg mb-3 p-1 object-cover border border-orange-200 object-top cursor-pointer",
                 {
-                  "border border-purple-500": selectedImage === index,
+                  "border border-primary-beliAja": selectedImage === index,
                 }
               )}
             />

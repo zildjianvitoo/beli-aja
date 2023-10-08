@@ -84,7 +84,7 @@ export default function TambahProdukForm({}: Props) {
       const res = await axiosInstance.post("/api/add-product", formData);
       console.log(res);
       toast.success("Berhasil menambahkan produk");
-      router.push("/dashboard");
+      router.push("/dashboard/filter");
     } catch (error) {
       toast.error("Terjadi error saat menambahkan produk");
       console.log(error);

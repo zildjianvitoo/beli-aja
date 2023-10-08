@@ -129,7 +129,7 @@ export default function Edit({
               </label>
               <input
                 type="text"
-                className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                 name="title"
                 id="title"
                 value={formData.title}
@@ -142,7 +142,7 @@ export default function Edit({
               </label>
               <input
                 type="text"
-                className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                 name="category"
                 id="category"
                 value={formData.category}
@@ -155,7 +155,7 @@ export default function Edit({
               </label>
               <input
                 type="text"
-                className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                 name="size"
                 id="size"
                 value={formData.size}
@@ -169,7 +169,7 @@ export default function Edit({
               </label>
               <input
                 type="text"
-                className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                 name="style"
                 id="style"
                 value={formData.style}
@@ -183,7 +183,7 @@ export default function Edit({
               </label>
               <input
                 type="text"
-                className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                 name="store"
                 id="store"
                 value={formData.store}
@@ -197,7 +197,7 @@ export default function Edit({
               </label>
               <input
                 type="number"
-                className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                 name="inventory"
                 id="inventory"
                 value={formData.inventory}
@@ -210,7 +210,7 @@ export default function Edit({
               </label>
               <input
                 type="number"
-                className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                 name="price"
                 id="price"
                 value={formData.price}
@@ -225,7 +225,7 @@ export default function Edit({
                 </label>
                 <input
                   type="text"
-                  className="w-full h-[50px] border rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                  className="w-full h-[50px] border rounded-lg focus:border-primary-beliAja px-3 focus:border-2 outline-none"
                   name="color"
                   id="color"
                   value={formData.color}

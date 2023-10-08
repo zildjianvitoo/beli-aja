@@ -135,13 +135,13 @@ export default function Info({
           <p>Pengiriman & Pengembalian Gratis</p>
         </span>
       </div>
-      {currentUserId === userId && (
+      {/* {currentUserId === userId && (
         <Link href={`/dashboard/edit-produk/${id}`}>
           <span className=" absolute top-0 right-0 opacity-75 hover:opacity-100 p-2 bg-green-600 rounded-full text-white cursor-pointer">
             <AiTwotoneEdit size={24} />
           </span>
         </Link>
-      )}
+      )} */}
     </div>
   );
 }

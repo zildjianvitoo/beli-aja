@@ -20,7 +20,7 @@ export default function Button({ allIds, userId }: Props) {
     <div className="flex items-center justify-center mt-20 cursor-pointer">
       <button
         onClick={onCheckout}
-        className="px-10 py-2 text-white bg-purple-600 rounded-full"
+        className="px-10 py-2 text-white bg-primary-beliAja rounded-full"
       >
         Checkout
       </button>

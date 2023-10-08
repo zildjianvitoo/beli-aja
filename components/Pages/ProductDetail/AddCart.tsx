@@ -37,7 +37,7 @@ export default function AddCart({ productId }: Props) {
 
   return (
     <button
-      className="flex items-center space-x-2 bg-purple-600 text-white px-6 py-2 rounded-full cursor-pointer"
+      className="flex items-center space-x-2 bg-primary-beliAja text-white px-6 py-2 rounded-full cursor-pointer"
       onClick={handleCart}
     >
       <span>

@@ -133,7 +133,7 @@ export default function Filter({}: Props) {
         <div className="flex flex-col py-3 pb-5 text-sm text-neutral-600 border-b-[0.5px]">
           <span
             className={`py-3 px-5 cursor-pointer  ${
-              selectedCategories.includes("Jaket") ? "bg-purple-50 " : ""
+              selectedCategories.includes("Jaket") ? "bg-orange-100" : ""
             }`}
             onClick={() => toggleCategory("Jaket")}
           >
@@ -141,7 +141,7 @@ export default function Filter({}: Props) {
           </span>
           <span
             className={`py-3 px-5 cursor-pointer  ${
-              selectedCategories.includes("Mantel") ? "bg-purple-50 " : ""
+              selectedCategories.includes("Mantel") ? "bg-orange-100" : ""
             }`}
             onClick={() => toggleCategory("Mantel")}
           >
@@ -149,7 +149,7 @@ export default function Filter({}: Props) {
           </span>
           <span
             className={`py-3 px-5 cursor-pointer  ${
-              selectedCategories.includes("Hoodie") ? "bg-purple-50 " : ""
+              selectedCategories.includes("Hoodie") ? "bg-orange-100" : ""
             }`}
             onClick={() => toggleCategory("Hoodie")}
           >
@@ -157,7 +157,7 @@ export default function Filter({}: Props) {
           </span>
           <span
             className={`py-3 px-5 cursor-pointer  ${
-              selectedCategories.includes("Kaos") ? "bg-purple-50 " : ""
+              selectedCategories.includes("Kaos") ? "bg-orange-100" : ""
             }`}
             onClick={() => toggleCategory("Kaos")}
           >
@@ -165,7 +165,7 @@ export default function Filter({}: Props) {
           </span>
           <span
             className={`py-3 px-5 cursor-pointer  ${
-              selectedCategories.includes("Jeans") ? "bg-purple-50 " : ""
+              selectedCategories.includes("Jeans") ? "bg-orange-100" : ""
             }`}
             onClick={() => toggleCategory("Jeans")}
           >
@@ -173,7 +173,7 @@ export default function Filter({}: Props) {
           </span>
           <span
             className={`py-3 px-5 cursor-pointer  ${
-              selectedCategories.includes("Polo") ? "bg-purple-50" : ""
+              selectedCategories.includes("Polo") ? "bg-orange-100" : ""
             }`}
             onClick={() => toggleCategory("Polo")}
           >
@@ -181,7 +181,7 @@ export default function Filter({}: Props) {
           </span>
           <span
             className={`py-3 px-5 cursor-pointer  ${
-              selectedCategories.includes("Kemeja") ? "bg-purple-50 " : ""
+              selectedCategories.includes("Kemeja") ? "bg-orange-100" : ""
             }`}
             onClick={() => toggleCategory("Kemeja")}
           >

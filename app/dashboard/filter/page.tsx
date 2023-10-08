@@ -88,7 +88,7 @@ const Page = (props: Props) => {
                   </div>
                   <div className="flex items-center justify-between mt-4">
                     <div>
-                      <h1 className="text-[14px] font-medium max-w-[150px] whitespace-nowrap overflow-hidden">
+                      <h1 className="text-[14px] font-medium max-w-[125px] whitespace-nowrap break-keep overflow-hidden">
                         {product.title}
                       </h1>
                       <p className="text-[13px] opacity-60">{product.store}</p>

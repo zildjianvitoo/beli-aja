@@ -16,7 +16,7 @@ const navLinks = [
     name: "Home",
   },
   {
-    path: "/produk",
+    path: "/dashboard/filter",
     name: "Produk",
   },
   {

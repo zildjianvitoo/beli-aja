@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -13,6 +14,10 @@ const config: Config = {
         "secondary-beliAja": "#FBC800",
         "text-color-beliAja": "#040404",
       },
+    },
+    screens: {
+      xs: "390px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [],

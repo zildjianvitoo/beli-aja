@@ -18,11 +18,11 @@ html {
   }
 
   .heading {
-    @apply text-[44px] leading-[54px] font-semibold text-heading-color-ravcare;
+    @apply text-[44px] leading-[54px] font-semibold text-text-color-beliAja;
   }
 
   .text-para {
-    @apply text-[18px] leading-[30px] font-normal text-text-color-ravcare mt-[18px] text-text-color-ravcare;
+    @apply text-[18px] leading-[30px] font-normal text-text-color-beliAja mt-[18px] text-text-color-beliAja;
   }
 
   .header {
@@ -48,7 +48,7 @@ html {
 
 @media only screen and (max-width: 1024px) {
   .container {
-    @apply w-full px-3;
+    @apply w-full px-5;
   }
 
   .navigation {

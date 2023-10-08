@@ -1,8 +1,9 @@
+import CTA from "@/components/Pages/LandingPage/CTA";
 import Intro from "@/components/Pages/LandingPage/Intro";
 import Jumbotron from "@/components/Pages/LandingPage/Jumbotron";
+import Testimoni from "@/components/Pages/LandingPage/Testimoni";
 import Trending from "@/components/Pages/LandingPage/Trending";
-import { montserrat } from "@/public/fonts";
-import Image from "next/image";
+import VideoPicture from "@/components/Pages/LandingPage/VideoPicture";
 
 export default function Home() {
   return (
@@ -10,7 +11,9 @@ export default function Home() {
       <Jumbotron />
       <Intro />
       <Trending />
-      <div className="my-32"></div>
+      <CTA />
+      <VideoPicture />
+      <Testimoni />
     </main>
   );
 }

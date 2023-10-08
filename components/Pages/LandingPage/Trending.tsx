@@ -56,7 +56,7 @@ export default function Trending({}: Props) {
                 data-aos="zoom-in"
                 data-aos-delay="100"
               >
-                <p className="lg:max-w-[250px]">
+                <p className="max-w-[250px]">
                   Jaket Korduroi Hangat Tebal Pakaian Luar Pria Mantel
                 </p>
                 <p className="text-primary-beliAja">Rp. 149.000</p>
@@ -77,8 +77,8 @@ export default function Trending({}: Props) {
                 data-aos="zoom-in"
                 data-aos-delay="200"
               >
-                <p className="lg:max-w-[250px]">
-                  Jaket Vintage 90s Luaran Jaket Pria Berbulu
+                <p className="max-w-[250px]">
+                  Jaket Vintage 90s untuk Luaran Jaket Pria Berbahan Bulu
                 </p>
                 <p className="text-primary-beliAja">Rp. 249.000</p>
               </div>
@@ -98,7 +98,7 @@ export default function Trending({}: Props) {
                 data-aos="zoom-in"
                 data-aos-delay="300"
               >
-                <p className="lg:max-w-[250px]">
+                <p className="max-w-[250px]">
                   Hoodie Putih Lengan Pendek Slim Fit
                 </p>
                 <p className="text-primary-beliAja">Rp. 129.000</p>

@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 import Navbar from "../Navbar";
 import "aos/dist/aos.css";
+import Footer from "../Footer";
 
 export const LayoutProvider = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
@@ -21,6 +22,7 @@ export const LayoutProvider = ({ children }: { children: ReactNode }) => {
         <>
           <Navbar />
           {children}
+          <Footer />
         </>
       ) : (
         <> {children}</>

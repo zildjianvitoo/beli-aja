@@ -9,6 +9,9 @@ import { outfit } from "@/public/fonts";
 export const metadata: Metadata = {
   title: "BeliAja",
   description: "BeliAja - Belanja Online Aman dan Nyaman",
+  icons: {
+    icon: "/assets/logo-beliAja.png",
+  },
 };
 
 export default function RootLayout({

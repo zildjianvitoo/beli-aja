@@ -6,7 +6,7 @@ import { BiMenu } from "react-icons/bi";
 import React, { useEffect, useRef, useState } from "react";
 import { PiStethoscopeDuotone } from "react-icons/pi";
 import { GrClose } from "react-icons/gr";
-import { montserrat, outfit } from "@/public/fonts";
+import { outfit } from "@/public/fonts";
 import { CiShoppingCart } from "react-icons/ci";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
@@ -59,10 +59,7 @@ export default function Navbar() {
   };
 
   return (
-    <header
-      className={`flex items-center header ${montserrat.className}`}
-      ref={headerRef}
-    >
+    <header className={`flex items-center header`} ref={headerRef}>
       <div className="container ">
         <div className="flex items-center justify-between  relative lg:border-b  lg:border-primary-beliAja">
           <div className="flex ">

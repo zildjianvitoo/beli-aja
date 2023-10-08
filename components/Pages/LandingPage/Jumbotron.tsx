@@ -49,8 +49,8 @@ export default function Jumbotron() {
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
-                <button className="px-7 py-3 bg-transparent text-black hover:bg-black hover:text-white border-[2px] border- font-medium hover:border-none border-text-color-beliAja hover:jumbotron-button-shadow rounded-lg">
-                  Belanjang
+                <button className="px-9 py-3 bg-transparent text-black hover:bg-black hover:text-white border-[2px] border- font-medium hover:border-none border-text-color-beliAja hover:jumbotron-button-shadow rounded-lg">
+                  Belanja
                 </button>
               </Link>
             </div>

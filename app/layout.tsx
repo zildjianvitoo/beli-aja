@@ -4,12 +4,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import SessionProvider from "@/components/Provider/SessionProvider";
 import { LayoutProvider } from "@/components/Provider/LayoutProvider";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
+import { outfit } from "@/public/fonts";
 
 export const metadata: Metadata = {
   title: "BeliAja",

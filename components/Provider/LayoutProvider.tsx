@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 import Navbar from "../Navbar";
+import "aos/dist/aos.css";
 
 export const LayoutProvider = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();

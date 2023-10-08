@@ -17,10 +17,6 @@ html {
     @apply max-w-full w-[1440px] mx-auto px-12;
   }
 
-  .btn {
-    @apply px-[35px] py-[15px]  rounded-[50px] text-white font-semibold bg-primary-ravcare mt-[38px];
-  }
-
   .heading {
     @apply text-[44px] leading-[54px] font-semibold text-heading-color-ravcare;
   }
@@ -35,6 +31,10 @@ html {
 
   .navbar-shadow {
     box-shadow: 3px 3px -8px #ddd;
+  }
+
+  .jumbotron-button-shadow {
+    box-shadow: #fe6a3a 4.5px 4.5px 0px;
   }
 }
 
@@ -55,7 +55,7 @@ html {
     @apply w-full h-full fixed top-0 left-0 z-[100] bg-[#00000084] hidden;
   }
   .menu {
-    @apply w-[15rem] h-full top-0 right-0 absolute bg-white z-[200] flex flex-col  items-center justify-center leading-[30px];
+    @apply w-[15rem] h-full top-0 right-0 absolute bg-[#fffbf7] z-[200] flex flex-col  items-center justify-center leading-[30px];
   }
 
   .show-menu {

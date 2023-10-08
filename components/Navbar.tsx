@@ -6,7 +6,7 @@ import { BiMenu } from "react-icons/bi";
 import React, { useEffect, useRef, useState } from "react";
 import { PiStethoscopeDuotone } from "react-icons/pi";
 import { GrClose } from "react-icons/gr";
-import { montserrat } from "@/public/fonts";
+import { montserrat, outfit } from "@/public/fonts";
 import { CiShoppingCart } from "react-icons/ci";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
@@ -66,7 +66,9 @@ export default function Navbar() {
       <div className="container ">
         <div className="flex items-center justify-between  relative lg:border-b  lg:border-primary-beliAja">
           <div className="flex ">
-            <h3 className="font-semibold text-[24px] ">BeliAja.</h3>
+            <h3 className={`font-semibold text-[24px] ${outfit.className} `}>
+              BeliAja.
+            </h3>
           </div>
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="flex items-center menu gap-[2.7rem]">

@@ -71,7 +71,7 @@ export default function SignInForm({}: Props) {
         />
         <button
           type="submit"
-          className="py-2  text-white border bg-purple-600 border-gray-300 mt-2 mb-4 focus:outline-none focus:border-gray-600 rounded-md opacity-80 hover:opacity-100"
+          className="py-2  text-white border bg-primary-beliAja border-gray-300 mt-2 mb-4 focus:outline-none focus:border-gray-600 rounded-md opacity-80 hover:opacity-100"
         >
           Login
         </button>
@@ -80,7 +80,7 @@ export default function SignInForm({}: Props) {
         </p>
         <Link
           href={"/daftar"}
-          className="text-center mt-2 text-purple-600 opacity-80 hover:opacity-100"
+          className="text-center mt-2 text-primary-beliAja opacity-80 hover:opacity-100"
         >
           Daftar
         </Link>

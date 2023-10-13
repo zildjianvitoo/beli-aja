@@ -20,10 +20,6 @@ const navLinks = [
     name: "Produk",
   },
   {
-    path: "/tentang-kami",
-    name: "Tentang Kami",
-  },
-  {
     path: "/kontak",
     name: "Kontak",
   },

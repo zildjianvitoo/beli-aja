@@ -101,12 +101,18 @@ export default function Navbar() {
               </Link>
             </div>
             <div className=" flex gap-3">
-              <div className="border rounded-full border-text-color-beliAja p-2 cursor-pointer">
+              <Link
+                href={"/masuk"}
+                className="border rounded-full border-text-color-beliAja p-2 cursor-pointer"
+              >
                 <AiOutlineUser size={20} className="text-[#5f5f5f]" />
-              </div>
-              <div className="border rounded-full border-text-color-beliAja p-2 cursor-pointer">
+              </Link>
+              <Link
+                href={"/dashboard/filter"}
+                className="border rounded-full border-text-color-beliAja p-2 cursor-pointer"
+              >
                 <AiOutlineShoppingCart size={20} className="text-[#5f5f5f]" />
-              </div>
+              </Link>
             </div>
             <span className="lg:hidden" onClick={toggleMenu}>
               <BiMenu className="w-8 h-8 cursor-pointer " />

@@ -20,7 +20,7 @@ const navLinks = [
     name: "Produk",
   },
   {
-    path: "/tentang-kami",
+    path: "/",
     name: "Tentang Kami",
   },
   {
